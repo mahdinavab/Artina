@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr"
+    tools:context=".fragment.MarketFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/main_toolbar"
+                    layout="@layout/main_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/main_toolbar">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/seller_constraint"
+                        android:layout_width="@dimen/_145sdp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/card_tab_seller"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="@dimen/_48sdp"
+                            android:src="@drawable/cardtabdisable"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/seller_icon"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginEnd="@dimen/_minus10sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:src="@drawable/sellerdisableicon"
+                            app:layout_constraintBottom_toBottomOf="@id/card_tab_seller"
+                            app:layout_constraintEnd_toEndOf="@id/card_tab_seller" />
+
+                        <TextView
+                            android:id="@+id/seller_text"
+                            style="@style/iran_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="5sp"
+                            android:text="فروشندگان"
+                            android:textColor="#FDE8DE"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@id/seller_icon"
+                            app:layout_constraintStart_toStartOf="@id/card_tab_seller"
+                            app:layout_constraintTop_toTopOf="@+id/card_tab_seller"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_tab_seller" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/buyer_constraint"
+                        android:layout_width="@dimen/_145sdp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/card_tab_buyer"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="@dimen/_48sdp"
+                            android:src="@drawable/cardtabenable"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/buyer_icon"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginEnd="@dimen/_minus10sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:src="@drawable/buyerenableicon"
+                            app:layout_constraintBottom_toBottomOf="@id/card_tab_buyer"
+                            app:layout_constraintEnd_toEndOf="@id/card_tab_buyer" />
+
+                        <TextView
+                            android:id="@+id/buyer_text"
+                            style="@style/iran_sans_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="5sp"
+                            android:text="خریداران"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@id/buyer_icon"
+                            app:layout_constraintStart_toStartOf="@id/card_tab_buyer"
+                            app:layout_constraintTop_toTopOf="@+id/card_tab_buyer"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_tab_buyer" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

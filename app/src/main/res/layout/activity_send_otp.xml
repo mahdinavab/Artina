@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".activity.SendOtpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/send_otp_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_270sdp"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_25sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient_one"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_6sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="@dimen/_110sdp"
+                                android:layout_height="@dimen/_110sdp"
+                                android:src="@drawable/mainlogo" />
+
+                            <TextView
+                                android:id="@+id/artina_text"
+                                style="@style/iran_sans_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:text="@string/artina"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/_29ssp" />
+
+                            <TextView
+                                android:id="@+id/artina_app_text"
+                                style="@style/iran_sans_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_minus12sdp"
+                                android:text="@string/artinaApp"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/_15ssp" />
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/helper_text"
+                    style="@style/iran_sans_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:lineSpacingExtra="5sp"
+                    android:text="لطفا شماره موبایل تان را وارد کنید تا کد فعالسازی برایتان ارسال شود."
+                    android:textColor="#303840"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/send_otp_card_view" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mobile_card_view"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    app:cardCornerRadius="@dimen/_18sdp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#FFF5F5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/helper_text">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_177sdp"
+                                android:layout_height="@dimen/_32sdp"
+                                app:cardElevation="0dp"
+                                app:cardCornerRadius="@dimen/_7sdp">
+                                <EditText
+                                    android:id="@+id/mobile_edit_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginVertical="@dimen/_2sdp"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    style="@style/iran_sans_bold"
+                                    android:textColorHint="#E5B8B8"
+                                    android:hint="شماره موبایل"
+                                    android:textColor="@color/orangeRed"
+                                    android:maxLength="11"
+                                    android:paddingHorizontal="@dimen/_2sdp"
+                                    android:textSize="@dimen/_15ssp"
+                                    android:textDirection="rtl"
+                                    android:background="@null"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.cardview.widget.CardView>
+
+                            <View
+                                android:id="@+id/line_view"
+                                android:layout_width="@dimen/_1sdp"
+                                android:layout_height="@dimen/_26sdp"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:background="@color/orangeRed" />
+
+                            <ImageView
+                                android:id="@+id/phone_icon_image"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_17sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:src="@drawable/phoneicon" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/send_code"
+                                android:layout_width="@dimen/_218sdp"
+                                android:layout_height="@dimen/_35sdp"
+                                app:cardElevation="0dp"
+                                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                app:cardCornerRadius="@dimen/_7sdp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/gradient_one">
+                                    <TextView
+                                        android:id="@+id/send_code_text"
+                                        style="@style/iran_sans_bold"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:lineSpacingExtra="5sp"
+                                        android:text="ارسال کد تایید"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14ssp" />
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/rule_text_one"
+            style="@style/iran_sans_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="با ثبت نام در آرتینا "
+            android:textColor="@color/blackTwo"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/rule_text_two"
+            style="@style/iran_sans_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/privacy_text"
+            android:textColor="@color/orangeTwo"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rule_text_one" />
+
+        <TextView
+            android:id="@+id/rule_text_three"
+            style="@style/iran_sans_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="را می پذیرم. "
+            android:textColor="@color/blackTwo"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rule_text_two"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

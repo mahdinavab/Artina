@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Artina</string>
+    <string name="artina">Artina</string>
+    <string name="artinaApp">application</string>
+    <string name="privacy_text"><u> شرایط و قوانین </u></string>
+
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
