@@ -37,9 +37,9 @@ public class MarketFragment extends Fragment {
     ImageView cardTabSeller;
     TextView sellerText;
 
-    RecyclerView recyclerMarketSource;
-    SortMarketAdapter adapterMarketSource;
-    RecyclerView.LayoutManager layoutManagerMarketSource;
+    RecyclerView sortMarketRecycler;
+    SortMarketAdapter sortMarketAdapter;
+    RecyclerView.LayoutManager sortMarketAdapterLayoutManager;
 
     public MarketFragment() {
         // Required empty public constructor
@@ -74,15 +74,13 @@ public class MarketFragment extends Fragment {
         sellerIcon = view.findViewById(R.id.seller_icon);
         cardTabSeller = view.findViewById(R.id.card_tab_seller);
         sellerText = view.findViewById(R.id.seller_text);
+        sortMarketRecycler = view.findViewById(R.id.sort_market_recycler);
     }
 
     private void onClicks(){
         sellerConstraint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("CCCLLLLL","seller constraint");
-                Log.i("CCCLLLLL",selectedTab);
-
                 if(selectedTab.equals("seller")){
                     //nothing
                 }else {
@@ -99,8 +97,6 @@ public class MarketFragment extends Fragment {
         buyerConstraint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("CCCLLLLL","buyer constraint");
-                Log.i("CCCLLLLL",selectedTab);
                 if (selectedTab.equals("buyer")) {
                     //nothing
                 } else {
@@ -118,13 +114,15 @@ public class MarketFragment extends Fragment {
     
     private void setSortItems(){
         List<SortMarketModel> sortMarketModelList=new ArrayList<>();
-        sortMarketModelList.add(new SortMarketModel(0,"newer",R.drawable.buyerdisableicon,"جدید ترین"));
+        sortMarketModelList.add(new SortMarketModel(0,"newer",R.drawable.newersorticon,"جدید ترین"));
+        sortMarketModelList.add(new SortMarketModel(1,"highestweight",R.drawable.highestweightsorticon,"بالا ترین وزن"));
+        sortMarketModelList.add(new SortMarketModel(2,"lowestweight",R.drawable.lowestweightsorticon,"پایین ترین وزن"));
 
-        adapterMarketSource = new SortMarketAdapter(getActivity(),getActivity().getApplicationContext(),sortMarketModelList);
-        recyclerMarketSource.setAdapter(adapterMarketSource);
-        layoutManagerMarketSource = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        recyclerMarketSource.setLayoutManager(layoutManagerMarketSource);
-        recyclerMarketSource.setHasFixedSize(true);
+        sortMarketAdapter = new SortMarketAdapter(getActivity(),getActivity().getApplicationContext(),sortMarketModelList);
+        sortMarketRecycler.setAdapter(sortMarketAdapter);
+        sortMarketAdapterLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,true);
+        sortMarketRecycler.setLayoutManager(sortMarketAdapterLayoutManager);
+        sortMarketRecycler.setHasFixedSize(true);
     }
 
 }
