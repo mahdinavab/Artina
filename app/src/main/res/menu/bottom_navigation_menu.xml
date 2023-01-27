@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile_bottom_navigation"
+        android:icon="@drawable/profilebottomicon"
+        android:title="پروفایل" />
+    <item
+        android:id="@+id/chat_bottom_navigation"
+        android:icon="@drawable/chatbottomicon"
+        android:title="گفتگو" />
+    <item
+        android:id="@+id/education_bottom_navigation"
+        android:icon="@drawable/educationbottomicon"
+        android:title="آموزش" />
+    <item
+        android:id="@+id/market_bottom_navigation"
+        android:icon="@drawable/marketbottomicon"
+        android:title="بازار" />
+
+</menu>
