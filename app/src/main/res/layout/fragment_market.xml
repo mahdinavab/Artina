@@ -35,6 +35,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
+                    android:id="@+id/market_tab_linear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -46,14 +47,14 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:id="@+id/seller_constraint"
-                        android:layout_width="@dimen/_145sdp"
+                        android:layout_width="@dimen/_148sdp"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/card_tab_seller"
-                            android:layout_width="@dimen/_120sdp"
-                            android:layout_height="@dimen/_48sdp"
-                            android:src="@drawable/cardtabdisable"
+                            android:layout_width="@dimen/_127sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:src="@drawable/cardtabenable"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -89,13 +90,14 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:id="@+id/buyer_constraint"
-                        android:layout_width="@dimen/_145sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_width="@dimen/_148sdp"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/card_tab_buyer"
-                            android:layout_width="@dimen/_120sdp"
-                            android:layout_height="@dimen/_48sdp"
+                            android:layout_width="@dimen/_127sdp"
+                            android:layout_height="@dimen/_50sdp"
                             android:src="@drawable/cardtabenable"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -130,6 +132,28 @@
 
 
                 </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sort_market_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:clipChildren="true"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/market_tab_linear" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/_25sdp"
+                    app:layout_constraintTop_toTopOf="@id/sort_market_recycler"
+                    app:layout_constraintBottom_toBottomOf="@id/sort_market_recycler"
+                    app:layout_constraintStart_toStartOf="@id/sort_market_recycler"
+                    android:layout_height="0dp"
+                    android:background="@drawable/fade_to_white_gradient"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
