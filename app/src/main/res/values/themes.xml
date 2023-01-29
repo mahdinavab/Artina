@@ -78,4 +78,16 @@
         <item name="cornerSizeBottomRight">@dimen/_8sdp</item>
     </style>
 
+    <style name="mainStyle" parent="Theme.Artina">
+        <item name="cookieTitleColor">@color/white</item>
+        <item name="cookieMessageColor">@color/white</item>
+        <item name="cookieActionColor">@color/white</item>
+        <item name="cookieBackgroundColor">@color/orangeRed</item>
+        <item name="cookiePadding">@dimen/_13sdp</item>
+        <item name="cookieTitleSize">@dimen/_14ssp</item>
+        <item name="cookieMessageSize">@dimen/_3ssp</item>
+        <item name="cookieActionSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/iransansbold</item>
+    </style>
+
 </resources>
