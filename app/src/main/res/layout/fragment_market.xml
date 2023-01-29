@@ -54,7 +54,7 @@
                             android:id="@+id/card_tab_seller"
                             android:layout_width="@dimen/_127sdp"
                             android:layout_height="@dimen/_50sdp"
-                            android:src="@drawable/cardtabenable"
+                            android:src="@drawable/cardtabdisable"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

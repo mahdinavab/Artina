@@ -4,6 +4,28 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="ltr">
+    <com.google.android.material.card.MaterialCardView
+        style="@style/custom_card_corners_two"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_16sdp"
+        app:cardBackgroundColor="#FFF6E8"
+        app:cardElevation="0dp"
+        android:layout_marginStart="@dimen/_minus10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cadr_main_product"
+        app:layout_constraintStart_toEndOf="@+id/timer_icon_card">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_gravity="center"
+            style="@style/iran_sans_bold"
+            android:textColor="@color/orange"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:textSize="@dimen/_7ssp"
+            android:text="3 روز باقی مانده" />
+    </com.google.android.material.card.MaterialCardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cadr_main_product"
         android:layout_width="match_parent"
@@ -17,6 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cadr_select_drug_store"
@@ -213,4 +236,46 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/custom_card_corners_two"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_16sdp"
+        app:cardBackgroundColor="#FFF6E8"
+        app:cardElevation="0dp"
+        android:layout_marginStart="@dimen/_minus10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cadr_main_product"
+        app:layout_constraintStart_toEndOf="@+id/timer_icon_card">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_gravity="center"
+            style="@style/iran_sans_bold"
+            android:textColor="@color/orange"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:textSize="@dimen/_7ssp"
+            android:text="3 روز باقی مانده" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/timer_icon_card"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_16sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/cadr_main_product"
+        app:layout_constraintBottom_toBottomOf="@+id/cadr_main_product"
+        app:cardBackgroundColor="@color/orange"
+        style="@style/custom_card_corners_one">
+        <ImageView
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:src="@drawable/timericonone"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
