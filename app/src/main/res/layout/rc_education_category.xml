@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/right_constraint_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/custom_card_corners_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_minus15sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            app:cardBackgroundColor="@color/orangeRed"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress"
+            app:layout_constraintEnd_toStartOf="@+id/assessment1_progress">
+
+            <TextView
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_31sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:text="کشاورزی"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            style="@style/custom_card_corners_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_100sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress"
+            app:layout_constraintEnd_toEndOf="@+id/assessment1_progress"
+            app:layout_constraintStart_toStartOf="@+id/assessment1_progress"
+            app:layout_constraintTop_toTopOf="@+id/assessment1_progress" />
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/assessment1_progress"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:elevation="@dimen/_10sdp"
+            android:rotation="55"
+            app:cpb_background_progressbar_color="#FFFFFF"
+            app:cpb_background_progressbar_width="@dimen/_5sdp"
+            app:cpb_progress="70"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/orangeRed"
+            app:cpb_progressbar_width="@dimen/_5sdp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="@+id/category_image"
+            app:layout_constraintEnd_toEndOf="@+id/category_image"
+            app:layout_constraintStart_toStartOf="@+id/category_image"
+            app:layout_constraintTop_toTopOf="@+id/category_image" />
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/assessment2_progress"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:rotation="10"
+            app:cpb_background_progressbar_color="#FFFFFF"
+            app:cpb_background_progressbar_width="@dimen/_2sdp"
+            app:cpb_progress="34"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/orangeRed"
+            app:cpb_progressbar_width="@dimen/_2sdp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress"
+            app:layout_constraintEnd_toEndOf="@+id/assessment1_progress"
+            app:layout_constraintStart_toStartOf="@+id/assessment1_progress"
+            app:layout_constraintTop_toTopOf="@+id/assessment1_progress" />
+
+        <ImageView
+            android:id="@+id/category_image"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_160sdp"
+            android:elevation="@dimen/_20sdp"
+            android:src="@drawable/imagetestone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/left_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/custom_card_corners_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_minus15sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            app:cardBackgroundColor="@color/orangeRed"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress2"
+            app:layout_constraintStart_toEndOf="@+id/assessment1_progress2">
+
+            <TextView
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_31sdp"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:text="کشاورزی"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            style="@style/custom_card_corners_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_100sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress2"
+            app:layout_constraintEnd_toEndOf="@+id/assessment1_progress2"
+            app:layout_constraintStart_toStartOf="@+id/assessment1_progress2"
+            app:layout_constraintTop_toTopOf="@+id/assessment1_progress2" />
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/assessment1_progress2"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:elevation="@dimen/_10sdp"
+            android:rotation="55"
+            app:cpb_background_progressbar_color="#FFFFFF"
+            app:cpb_background_progressbar_width="@dimen/_5sdp"
+            app:cpb_progress="70"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/orangeRed"
+            app:cpb_progressbar_width="@dimen/_5sdp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="@+id/category_image2"
+            app:layout_constraintEnd_toEndOf="@+id/category_image2"
+            app:layout_constraintStart_toStartOf="@+id/category_image2"
+            app:layout_constraintTop_toTopOf="@+id/category_image2" />
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/assessment2_progress2"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:rotation="220"
+            app:cpb_background_progressbar_color="#FFFFFF"
+            app:cpb_background_progressbar_width="@dimen/_2sdp"
+            app:cpb_progress="34"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/orangeRed"
+            app:cpb_progressbar_width="@dimen/_2sdp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="@+id/assessment1_progress2"
+            app:layout_constraintEnd_toEndOf="@+id/assessment1_progress2"
+            app:layout_constraintStart_toStartOf="@+id/assessment1_progress2"
+            app:layout_constraintTop_toTopOf="@+id/assessment1_progress2" />
+
+        <ImageView
+            android:id="@+id/category_image2"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_160sdp"
+            android:elevation="@dimen/_20sdp"
+            android:src="@drawable/imagetestone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
