@@ -21,6 +21,7 @@ public class SendOtpActivity extends AppCompatActivity {
 
         findViews();
         onClicks();
+
     }
 
     private void findViews(){
