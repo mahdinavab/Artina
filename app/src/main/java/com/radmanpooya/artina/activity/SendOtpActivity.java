@@ -34,6 +34,7 @@ public class SendOtpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SendOtpActivity.this,VerifyActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
