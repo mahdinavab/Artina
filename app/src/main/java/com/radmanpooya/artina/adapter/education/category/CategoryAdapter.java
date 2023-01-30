@@ -76,7 +76,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             public void onClick(View v) {
 
                 Intent intentToSecCat = new Intent(context, LearnListActivity.class);
-                intentToSecCat.putExtra("category_id", categoryResponseList.get(position).getId());
+
+                intentToSecCat.putExtra("category_id",categoryResponseList.get(position).getId());
+                intentToSecCat.putExtra("category_title",categoryResponseList.get(position).getTitle());
                 intentToSecCat.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intentToSecCat);
 
