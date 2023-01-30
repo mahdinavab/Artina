@@ -9,7 +9,7 @@
     android:layoutDirection="ltr">
 
     <TextView
-        android:id="@+id/season_text_view"
+        android:id="@+id/section_title"
         style="@style/iran_sans_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,9 +38,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
         <TextView
-            android:id="@+id/study_text_view"
+            android:id="@+id/number_lessons"
             style="@style/iran_sans_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +58,7 @@
         android:background="#F3F5F6"
         android:layout_marginTop="@dimen/_12sdp"
         app:layout_constraintTop_toBottomOf="@id/number_of_part_card_view"
-        app:layout_constraintEnd_toEndOf="@id/season_text_view"
+        app:layout_constraintEnd_toEndOf="@id/section_title"
         app:layout_constraintStart_toStartOf="@id/number_of_part_card_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

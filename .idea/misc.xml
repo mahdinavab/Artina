@@ -10,10 +10,12 @@
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_learn_list.xml" value="0.14144144144144144" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_product.xml" value="0.10400000000000001" />
-        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_section.xml" value="0.72" />
+        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_section.xml" value="0.2" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_send_otp.xml" value="0.176" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_splash_screen.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_verify.xml" value="0.29296424452133796" />
+        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/activity_verify.xml" value="0.264" />
+        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/charge_wallet_dialog.xml" value="0.37349397590361444" />
+        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/contact_bottomsheet.xml" value="0.11846846846846847" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/fragment_education.xml" value="0.15090090090090091" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/fragment_market.xml" value="0.2" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/main_toolbar.xml" value="0.1463963963963964" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/rc_learn_item.xml" value="0.264" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/rc_product_item.xml" value="0.6103678929765887" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/rc_related_learn_item.xml" value="0.12612612612612611" />
+        <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/rc_section_item.xml" value="0.2" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/layout/rc_sort_market_item.xml" value="0.264" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/Mahdinvbz/AndroidStudioProjects/Artina2/app/src/main/res/menu/menu.xml" value="0.23072916666666668" />

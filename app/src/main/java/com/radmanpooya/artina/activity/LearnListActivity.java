@@ -43,7 +43,6 @@ import java.util.Map;
 
 public class LearnListActivity extends AppCompatActivity {
 
-
     int categoryId;
     String categoryTitle;
 
@@ -54,16 +53,19 @@ public class LearnListActivity extends AppCompatActivity {
     ConstraintLayout toolbar;
     TextView toolbarTitle;
     CardView backCardView;
-
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_list);
 
-        findViews();
-        initialize();
-        onClicks();
+        try {
+            findViews();
+            initialize();
+            onClicks();
+        }catch (Exception e){
+
+        }
 
     }
 
@@ -103,7 +105,7 @@ public class LearnListActivity extends AppCompatActivity {
                 try {
                     Gson gson = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
                     List<LearnResponseItem> learnResponseItems = gson.fromJson(response, new TypeToken<List<LearnResponseItem>>(){}.getType());
-                    adapter=new LearnAdapter(LearnListActivity.this,learnResponseItems);
+                    adapter=new LearnAdapter(LearnListActivity.this,learnResponseItems,categoryId,categoryTitle);
                     learnRecycler.setAdapter(adapter);
                     layoutManager=new LinearLayoutManager(LearnListActivity.this);
                     learnRecycler.setLayoutManager(layoutManager);
@@ -141,15 +143,6 @@ public class LearnListActivity extends AppCompatActivity {
         learnReq.setRetryPolicy(new DefaultRetryPolicy(5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Api.getInstance().addToRequestQueue(learnReq, "LEARNLIST");
 
-    }
-
-    private void setSortItems(){
-        List<SortMarketModel> sortMarketModelList=new ArrayList<>();
-        sortMarketModelList.add(new SortMarketModel(0,"newer",R.drawable.newersorticon,"جدید ترین"));
-        sortMarketModelList.add(new SortMarketModel(1,"highestweight",R.drawable.highestweightsorticon,"بالا ترین وزن"));
-        sortMarketModelList.add(new SortMarketModel(2,"lowestweight",R.drawable.lowestweightsorticon,"پایین ترین وزن"));
-
-        
     }
 
 }

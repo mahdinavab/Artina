@@ -15,7 +15,7 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:text="دوره مقدماتی دوره اول"
         android:textColor="@color/black"
-        android:textSize="@dimen/_18ssp"
+        android:textSize="@dimen/_17ssp"
         app:layout_constraintBottom_toBottomOf="@id/back_card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/back_card_view" />
@@ -83,7 +83,7 @@
 
 
         <TextView
-            android:id="@+id/cost_two_text_view"
+            android:id="@+id/section_number"
             style="@style/iran_sans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
 
 
         <TextView
-            android:id="@+id/professor_two_text_view"
+            android:id="@+id/author_text"
             style="@style/iran_sans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -224,7 +224,7 @@
 
 
         <TextView
-            android:id="@+id/cost_two_text"
+            android:id="@+id/price_text"
             style="@style/iran_sans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -279,16 +279,17 @@
         android:text="سرفصل های دوره"
         android:layout_marginTop="@dimen/_17sdp"
         android:textColor="#303840"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_11ssp"
         app:layout_constraintTop_toBottomOf="@id/education_image_card_view"
-        app:layout_constraintEnd_toEndOf="@id/education_image_card_view"/>
+        app:layout_constraintEnd_toEndOf="@id/section_card_recycler"/>
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_280sdp"
-        android:layout_height="@dimen/_50sdp"
+        android:id="@+id/buttons_bottom"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_44sdp"
         android:layout_marginBottom="@dimen/_15sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_14sdp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -303,7 +304,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_140sdp"
+                android:layout_width="@dimen/_130sdp"
                 android:layout_height="match_parent"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
@@ -327,13 +328,13 @@
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center"
                 android:background="#ffffff" />
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_140sdp"
+                android:layout_width="@dimen/_130sdp"
                 android:layout_height="match_parent"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
@@ -357,6 +358,36 @@
 
         </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/section_card_recycler"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_35sdp"
+        app:cardBackgroundColor="#FBF9F9"
+        app:cardCornerRadius="@dimen/_14sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titles_of_period" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/section_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clipChildren="true"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
