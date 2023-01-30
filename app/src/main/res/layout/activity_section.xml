@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/title_text_view"
+        android:id="@+id/learn_title_text_view"
         style="@style/iran_sans_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,15 +60,14 @@
         android:layout_marginTop="@dimen/_20sdp"
         app:cardCornerRadius="@dimen/_9sdp"
         app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="@id/title_text_view"
-        app:layout_constraintTop_toBottomOf="@id/title_text_view">
+        app:layout_constraintEnd_toEndOf="@id/learn_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/learn_title_text_view">
 
         <ImageView
-            android:id="@+id/education_image_view"
+            android:id="@+id/learn_image_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/learnimageofperiod" />
+            android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
 

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr">
+    
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_98sdp"
+        android:layout_height="@dimen/_140sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardBackgroundColor="#BFFFFFFF">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/learn_card_view"
+                android:layout_width="@dimen/_91sdp"
+                android:layout_height="@dimen/_86sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/education_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/learnimageofperiod"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/iran_sans_bold"
+                android:id="@+id/title_of_period_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="دوره مقدماتی دوره اول"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="#303840"
+                app:layout_constraintTop_toBottomOf="@id/learn_card_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/cost_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/title_of_period_text_view"
+                app:layout_constraintEnd_toEndOf="@id/title_of_period_text_view">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <TextView
+                    style="@style/iran_sans_bold"
+                    android:id="@+id/cost_two_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="2500000 تومان"
+                    android:textSize="@dimen/_6ssp"
+                    android:textColor="#788692"/>
+
+                <TextView
+                    style="@style/iran_sans_bold"
+                    android:id="@+id/cost_one_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center_vertical"
+                    android:text="قیمت: "
+                    android:textSize="@dimen/_6ssp"
+                    android:textColor="#788692"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/costiconofperiod"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/professor_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/cost_linear_layout"
+                app:layout_constraintEnd_toEndOf="@id/title_of_period_text_view">
+
+
+
+
+                <TextView
+                    style="@style/iran_sans_bold"
+                    android:id="@+id/professor_two_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="محمد سعید فدالدینی"
+                    android:textSize="@dimen/_6ssp"
+                    android:textColor="#788692"/>
+
+                <TextView
+                    style="@style/iran_sans_bold"
+                    android:id="@+id/professor_one_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center_vertical"
+                    android:text="استاد: "
+                    android:textSize="@dimen/_6ssp"
+                    android:textColor="#788692"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/professoriconofperiod"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>
