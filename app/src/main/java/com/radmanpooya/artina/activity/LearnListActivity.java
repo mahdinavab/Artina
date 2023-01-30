@@ -8,9 +8,15 @@ import com.radmanpooya.artina.R;
 
 public class LearnListActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_list);
+
+    }
+
+    private void findViews(){
+
     }
 }
