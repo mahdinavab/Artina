@@ -66,6 +66,7 @@ public class SendOtpActivity extends AppCompatActivity {
                 String regexStr = "^[0-9]*$";
                 if (inputMobile.startsWith("0") && inputMobile.matches(regexStr) && inputMobile.length()==11){
                     Intent intent = new Intent(SendOtpActivity.this,VerifyActivity.class);
+                    intent.putExtra("mobile",inputMobile);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();

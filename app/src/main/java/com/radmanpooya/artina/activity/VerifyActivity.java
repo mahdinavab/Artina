@@ -1,8 +1,11 @@
 package com.radmanpooya.artina.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.ViewCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,7 +22,28 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.radmanpooya.artina.R;
+import com.radmanpooya.artina.api.Api;
+import com.radmanpooya.artina.api.Link;
+import com.radmanpooya.artina.model.user.response.sendotp.SendOtpResponse;
+import com.radmanpooya.artina.model.user.response.verify.VerifyCodeResponse;
+import com.radmanpooya.artina.model.user.send.sendotp.SendOtpRequestModel;
+import com.radmanpooya.artina.model.user.send.verify.VerifyCodeRequestModel;
+import com.radmanpooya.artina.util.NullStringToEmptyAdapterFactory;
+import com.radmanpooya.artina.util.UserInfoManager;
+
+import org.aviran.cookiebar2.CookieBar;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class VerifyActivity extends AppCompatActivity {
 
@@ -33,6 +57,10 @@ public class VerifyActivity extends AppCompatActivity {
     EditText regNumber2;
     EditText regNumber3;
     EditText regNumber4;
+    String mobilePhone;
+    TextView mobileV;
+    TextView editMobileText;
+    String inputCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +82,8 @@ public class VerifyActivity extends AppCompatActivity {
         regNumber2=findViewById(R.id.reg_number2);
         regNumber3=findViewById(R.id.reg_number3);
         regNumber4=findViewById(R.id.reg_number4);
+        mobileV=findViewById(R.id.mobile_v);
+        editMobileText=findViewById(R.id.edit_mobile_text);
 
     }
 
@@ -61,8 +91,24 @@ public class VerifyActivity extends AppCompatActivity {
         loginToApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
-                startActivity(intent);
+                try {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                }catch (Exception e){
+
+                }
+
+                if(regNumber1.getText().toString().matches("") || regNumber2.getText().toString().matches("") || regNumber3.getText().toString().matches("") || regNumber4.getText().toString().matches("")){
+                    CookieBar.Builder c = CookieBar.build(VerifyActivity.this);
+                    c.setTitle(" لطفا کد را کامل وارد نمایید");
+                    c.setSwipeToDismiss(true);
+                    c.setCookiePosition(CookieBar.BOTTOM); // Cookie will be displayed at the bottom
+                    ViewCompat.setLayoutDirection(c.show().getView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+                }else{
+
+                    inputCode=regNumber1.getText().toString()+regNumber2.getText().toString()+regNumber3.getText().toString()+regNumber4.getText().toString();
+                    verifyCode(inputCode,mobilePhone);
+                }
             }
         });
 
@@ -149,10 +195,9 @@ public class VerifyActivity extends AppCompatActivity {
                     if(regNumber1.getText().toString().matches("") || regNumber2.getText().toString().matches("") || regNumber3.getText().toString().matches("") || regNumber4.getText().toString().matches("")){
 
                     }else{
-                        /*inputCode=regNumber1.getText().toString()+regNumber2.getText().toString()+regNumber3.getText().toString()+regNumber4.getText().toString();
-                        loginToKavinooTextView.setVisibility(View.INVISIBLE);
-                        progressBarLogin.setVisibility(View.VISIBLE);
-                        sendConfirm(inputCode,mobile);*/
+
+                        inputCode=regNumber1.getText().toString()+regNumber2.getText().toString()+regNumber3.getText().toString()+regNumber4.getText().toString();
+                        verifyCode(inputCode,mobilePhone);
                     }
 
                 }else if(regNumber4.getText().toString().length()==0){
@@ -165,9 +210,23 @@ public class VerifyActivity extends AppCompatActivity {
 
             }
         });
+
+        timerCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendMessageAgain(mobilePhone);
+                setUpTimer();
+            }
+        });
+
+
     }
 
     private void setUpTimer(){
+        timerText.setTextColor(Color.parseColor("#456173"));
+        timerCardView.setClickable(true);
+        timerCardView.setCardBackgroundColor(Color.parseColor("#F5F5F5"));
+        timerCardView.startAnimation(zoomInAnimation);
         countDownTimer=new CountDownTimer(90000,1000){
             @Override
             public void onTick(long millisUntilFinished) {
@@ -193,7 +252,118 @@ public class VerifyActivity extends AppCompatActivity {
     }
 
     private void initialize(){
-       zoomInAnimation = AnimationUtils.loadAnimation(VerifyActivity.this, R.anim.zoom_in_two);
+        mobilePhone = getIntent().getStringExtra("mobile");
+        mobileV.setText(mobilePhone);
+        editMobileText.setText(mobilePhone);
+        zoomInAnimation = AnimationUtils.loadAnimation(VerifyActivity.this, R.anim.zoom_in_two);
+    }
+
+    public void sendMessageAgain(final String mobile){
+
+        final StringRequest sendMsgReq = new StringRequest(Request.Method.POST, Link.SEND_OTP, new Response.Listener<String>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onResponse(String response) {
+                Gson gson = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
+                SendOtpResponse sendOtpResponse = gson.fromJson(response, SendOtpResponse.class);
+
+                Log.i("AADD",sendOtpResponse.toString());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i("OKKKKK",error.getMessage());
+                CookieBar.Builder c = CookieBar.build(VerifyActivity.this);
+                c.setTitle(" لطفا اتصال اینترنت خود را بررسی فرمایید");
+                c.setSwipeToDismiss(true);
+                c.setCookiePosition(CookieBar.BOTTOM); // Cookie will be displayed at the bottom
+                ViewCompat.setLayoutDirection(c.show().getView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+
+            }
+        }
+        ) {
+            public byte[] getBody() throws AuthFailureError {
+
+                SendOtpRequestModel sendOtpRequestModel = new SendOtpRequestModel();
+                sendOtpRequestModel.setMobile(mobile);
+                String json = new Gson().toJson(sendOtpRequestModel);
+
+                return json.getBytes();
+
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> header = new HashMap<String, String>();
+                header.put("Content-Type", "application/json; charset=UTF-8");
+                return header;
+            }
+
+        };
+
+        sendMsgReq.setRetryPolicy(new DefaultRetryPolicy(5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        Api.getInstance().addToRequestQueue(sendMsgReq, "SENDOTP");
+
+    }
+
+    public void verifyCode(final String code, final String mobileNumber) {
+        final StringRequest verifyCodeReq = new StringRequest(Request.Method.POST, Link.VERIFY_CODE, new Response.Listener<String>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onResponse(String response) {
+
+                Gson gson = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
+                VerifyCodeResponse verifyCodeResponse = gson.fromJson(response, VerifyCodeResponse.class);
+                if(verifyCodeResponse.getStatus().equals("ok")){
+                    UserInfoManager userInfoManager = new UserInfoManager(VerifyActivity.this);
+                    userInfoManager.setRefreshToken(verifyCodeResponse.getRefreshToken());
+                    userInfoManager.setAccessToken(verifyCodeResponse.getAccessToken());
+                    Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    CookieBar.Builder c = CookieBar.build(VerifyActivity.this);
+                    c.setTitle(" لطفا درستی کد تایید خود را بررسی فرمایید");
+                    c.setSwipeToDismiss(true);
+                    c.setCookiePosition(CookieBar.BOTTOM); // Cookie will be displayed at the bottom
+                    ViewCompat.setLayoutDirection(c.show().getView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+                }
+                Log.i("AADD","VERIFY ::::: "+verifyCodeResponse.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                CookieBar.Builder c = CookieBar.build(VerifyActivity.this);
+                c.setTitle(" لطفا درستی کد تایید و یا اتصال اینترنت خود را بررسی فرمایید");
+                c.setSwipeToDismiss(true);
+                c.setCookiePosition(CookieBar.BOTTOM); // Cookie will be displayed at the bottom
+                ViewCompat.setLayoutDirection(c.show().getView(), ViewCompat.LAYOUT_DIRECTION_RTL);
+            }
+        }
+        ) {
+            public byte[] getBody() throws AuthFailureError {
+
+                VerifyCodeRequestModel verifyCodeRequestModel = new VerifyCodeRequestModel();
+                verifyCodeRequestModel.setMobile(mobileNumber);
+                verifyCodeRequestModel.setCode(code);
+                String json = new Gson().toJson(verifyCodeRequestModel);
+
+                return json.getBytes();
+
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> header = new HashMap<String, String>();
+                header.put("Content-Type", "application/json; charset=UTF-8");
+                return header;
+            }
+        };
+
+        verifyCodeReq.setRetryPolicy(new DefaultRetryPolicy(5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        Api.getInstance().addToRequestQueue(verifyCodeReq, "CONFIRMCODEREQ");
+
     }
 
 }
