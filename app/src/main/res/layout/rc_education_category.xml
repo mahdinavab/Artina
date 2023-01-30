@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="ltr">
 
@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
             style="@style/custom_card_corners_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,6 +26,7 @@
             app:layout_constraintEnd_toStartOf="@+id/assessment1_progress">
 
             <TextView
+                android:id="@+id/category_title_right"
                 style="@style/iran_sans_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,6 +38,19 @@
                 android:textSize="@dimen/_16ssp" />
         </com.google.android.material.card.MaterialCardView>
 
+        <TextView
+            android:id="@+id/number_of_learns_right"
+            style="@style/iran_sans_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="102 آموزش"
+            android:textColor="@color/blackTwo"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView3"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
@@ -58,7 +73,7 @@
             android:rotation="55"
             app:cpb_background_progressbar_color="#FFFFFF"
             app:cpb_background_progressbar_width="@dimen/_5sdp"
-            app:cpb_progress="70"
+            app:cpb_progress="0"
             app:cpb_progress_direction="to_right"
             app:cpb_progressbar_color="@color/orangeRed"
             app:cpb_progressbar_width="@dimen/_5sdp"
@@ -75,7 +90,7 @@
             android:rotation="10"
             app:cpb_background_progressbar_color="#FFFFFF"
             app:cpb_background_progressbar_width="@dimen/_2sdp"
-            app:cpb_progress="34"
+            app:cpb_progress="0"
             app:cpb_progress_direction="to_right"
             app:cpb_progressbar_color="@color/orangeRed"
             app:cpb_progressbar_width="@dimen/_2sdp"
@@ -105,6 +120,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView4"
             style="@style/custom_card_corners_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,6 +132,7 @@
             app:layout_constraintStart_toEndOf="@+id/assessment1_progress2">
 
             <TextView
+                android:id="@+id/category_title_left"
                 style="@style/iran_sans_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,6 +143,20 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp" />
         </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/number_of_learns_left"
+            style="@style/iran_sans_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="102 آموزش"
+            android:textColor="@color/blackTwo"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView4"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView4"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView4" />
 
 
         <com.google.android.material.card.MaterialCardView
@@ -149,7 +180,7 @@
             android:rotation="55"
             app:cpb_background_progressbar_color="#FFFFFF"
             app:cpb_background_progressbar_width="@dimen/_5sdp"
-            app:cpb_progress="70"
+            app:cpb_progress="0"
             app:cpb_progress_direction="to_right"
             app:cpb_progressbar_color="@color/orangeRed"
             app:cpb_progressbar_width="@dimen/_5sdp"
@@ -166,7 +197,7 @@
             android:rotation="220"
             app:cpb_background_progressbar_color="#FFFFFF"
             app:cpb_background_progressbar_width="@dimen/_2sdp"
-            app:cpb_progress="34"
+            app:cpb_progress="0"
             app:cpb_progress_direction="to_right"
             app:cpb_progressbar_color="@color/orangeRed"
             app:cpb_progressbar_width="@dimen/_2sdp"
