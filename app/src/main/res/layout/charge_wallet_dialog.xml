@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="ltr">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_17sdp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/charge_wallet_text_view_one"
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="موجودی شما برای خرید این دوره کافی نمی باشد، لطفا کیف پول"
+                android:textColor="#303840"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/charge_wallet_text_view_two"
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="خود را شارژ کنید."
+                android:textColor="#303840"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@id/charge_wallet_text_view_one"
+                app:layout_constraintTop_toBottomOf="@id/charge_wallet_text_view_one"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/input_cost_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/charge_wallet_text_view_one"
+                app:layout_constraintEnd_toEndOf="@id/charge_wallet_text_view_one"
+                app:layout_constraintTop_toBottomOf="@id/charge_wallet_text_view_two">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_232sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    app:cardElevation="0dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                    <EditText
+                        style="@style/iran_sans_bold"
+                        android:id="@+id/cost_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="@dimen/_2sdp"
+                        android:inputType="number"
+                        android:textColorHint="#E5B8B8"
+                        android:hint="   مبلغ"
+                        android:textColor="#D44416"
+                        android:maxLength="20"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:textSize="@dimen/_14ssp"
+                        android:textDirection="rtl"
+                        android:background="#fef9f9"/>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:id="@+id/line_view"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/orangeRed" />
+
+                <ImageView
+                    android:id="@+id/phone_icon_image"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_19sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/walleticon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_cost_linear_layout"
+                app:layout_constraintEnd_toEndOf="@id/charge_wallet_text_view_one"
+                app:layout_constraintStart_toStartOf="@id/charge_wallet_text_view_one">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/no_card_view"
+                    android:layout_width="@dimen/_133sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardBackgroundColor="#303840"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/no_text_view"
+                        style="@style/iran_sans_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="بستن"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/yes_card_view"
+                    android:layout_width="@dimen/_133sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:clickable="true"
+                    app:cardBackgroundColor="#ed5c45"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/yes_text_view"
+                        style="@style/iran_sans_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="پرداخت و شارژ"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

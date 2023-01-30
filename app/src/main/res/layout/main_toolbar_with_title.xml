@@ -14,9 +14,9 @@
         app:cardBackgroundColor="@android:color/transparent"
         app:cardCornerRadius="@dimen/_11sdp"
         app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/artina_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/artina_text">
+        app:layout_constraintTop_toTopOf="@+id/back_card_view">
 
         <ImageView
             android:layout_width="@dimen/_22sdp"
@@ -25,18 +25,37 @@
             android:src="@drawable/searchicon" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/artina_text"
-        style="@style/iran_sans_bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:text="@string/artina"
-        android:textColor="#303840"
-        android:textSize="@dimen/_20ssp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/back_card_view"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="@dimen/_9sdp"
+        app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_one">
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/back_image_view"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
+        android:src="@drawable/backicon"
+        app:layout_constraintBottom_toBottomOf="@id/back_card_view"
+        app:layout_constraintEnd_toEndOf="@id/back_card_view"
+        app:layout_constraintStart_toStartOf="@id/back_card_view"
+        app:layout_constraintTop_toTopOf="@id/back_card_view" />
+
 
     <TextView
         android:id="@+id/toolbar_title"
