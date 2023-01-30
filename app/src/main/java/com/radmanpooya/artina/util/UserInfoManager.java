@@ -16,8 +16,28 @@ public class UserInfoManager {
         editor.apply();
     }
 
+    public void setAccessToken(String token) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("access_token", token);
+        editor.apply();
+    }
+
+    public void setRefreshToken(String token) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("refresh_token", token);
+        editor.apply();
+    }
+
     public String getUserId() {
         return sharedPreferences.getString("user_id", "");
+    }
+
+    public String getAccessToken() {
+        return sharedPreferences.getString("access_token", "");
+    }
+
+    public String getRefreshToken() {
+        return sharedPreferences.getString("refresh_token", "");
     }
 
 }

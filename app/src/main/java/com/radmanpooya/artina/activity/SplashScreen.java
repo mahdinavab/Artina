@@ -49,7 +49,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                /*if (userInfoManager.getUserId().equals("")) {
+                if (userInfoManager.getAccessToken().equals("")) {
                     Intent i = new Intent(SplashScreen.this,SendOtpActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -58,9 +58,7 @@ public class SplashScreen extends AppCompatActivity {
                     Intent intent=new Intent(SplashScreen.this,MainActivity.class);
                     startActivity(intent);
                     finish();
-                }*/
-                Intent intent=new Intent(SplashScreen.this,SendOtpActivity.class);
-                startActivity(intent);
+                }
                 finish();
 
 
