@@ -9,4 +9,5 @@ public class Link {
     public static final String LEARN_LIST=BASE_URL+"learn/learn/";
     public static final String LSECTION_LIST=BASE_URL+"learn/section/";
     public static final String GET_PRODUCTS=BASE_URL+"catalogue/sortby";
+    public static final String PRODUCT_DETAILS=BASE_URL+"catalogue/single";
 }

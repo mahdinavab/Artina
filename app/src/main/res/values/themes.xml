@@ -78,6 +78,30 @@
         <item name="cornerSizeBottomRight">@dimen/_8sdp</item>
     </style>
 
+    <style name="custom_card_corners_key" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/custom_corners_key</item>
+    </style>
+
+    <style name="custom_corners_key" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/_11sdp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/_11sdp</item>
+    </style>
+
+    <style name="custom_card_corners_value" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/custom_corners_value</item>
+    </style>
+
+    <style name="custom_corners_value" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_11sdp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_11sdp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
     <style name="mainStyle" parent="Theme.Artina">
         <item name="cookieTitleColor">@color/white</item>
         <item name="cookieMessageColor">@color/white</item>

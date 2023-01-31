@@ -26,7 +26,7 @@
             android:textSize="@dimen/_15ssp" />
 
         <TextView
-            android:id="@+id/subtitle_text_view"
+            android:id="@+id/category_title"
             style="@style/iran_sans_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,9 @@
         app:cardCornerRadius="@dimen/_24sdp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@id/product_card_view"
-        app:layout_constraintEnd_toEndOf="@id/product_card_view"></androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toEndOf="@id/product_card_view">
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_38sdp"
@@ -139,7 +141,7 @@
         app:layout_constraintStart_toStartOf="@id/product_card_view">
 
         <TextView
-            android:id="@+id/reminder_time_text_view"
+            android:id="@+id/days_left_text"
             style="@style/iran_sans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -183,6 +185,7 @@
                 android:src="@drawable/weighticon" />
 
             <TextView
+                android:id="@+id/product_weight"
                 style="@style/iran_sans_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -221,6 +224,7 @@
                 android:src="@drawable/brandicon" />
 
             <TextView
+                android:id="@+id/brand_name"
                 style="@style/iran_sans_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -252,6 +256,7 @@
                 android:src="@drawable/costicon" />
 
             <TextView
+                android:id="@+id/product_price"
                 style="@style/iran_sans_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -292,7 +297,7 @@
 
 
     <TextView
-        android:id="@+id/countinue_description_text_view"
+        android:id="@+id/show_more"
         style="@style/iran_sans_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -304,6 +309,63 @@
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@id/description_text_view"
         app:layout_constraintTop_toBottomOf="@id/description_text_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_35sdp"
+        app:layout_constraintTop_toBottomOf="@+id/show_more"
+        app:layout_constraintEnd_toEndOf="@id/show_more"
+        app:layout_constraintStart_toStartOf="@+id/product_info_linear_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/value_card"
+                style="@style/custom_card_corners_value"
+                android:layout_width="match_parent"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#FFF6F6"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/key_card_recycler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/key_card_recycler"
+                style="@style/custom_card_corners_key"
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#FFFBFB"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/value_card"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attribute_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clipChildren="true"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_280sdp"

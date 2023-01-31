@@ -18,10 +18,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.SectionActivity"
+            android:name=".activity.ProductActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/mainStyle"/>
+        <activity
+            android:name=".activity.SectionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/mainStyle" />
         <activity
             android:name=".activity.LearnListActivity"
             android:exported="false"
