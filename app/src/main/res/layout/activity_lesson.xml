@@ -133,7 +133,7 @@
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_marginStart="@dimen/_4sdp"
                 android:layout_gravity="center_vertical"
-                app:cardBackgroundColor="#FEEDED"
+                app:cardBackgroundColor="@color/orangeRed"
                 app:cardCornerRadius="@dimen/_7sdp"
                 app:cardElevation="0dp">
 
@@ -157,7 +157,8 @@
                             android:layout_width="@dimen/_29sdp"
                             android:layout_height="@dimen/_24sdp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/modelicon" />
+                            android:src="@drawable/modelicon"
+                            app:tint="@color/white" />
 
                         <TextView
                             android:id="@+id/model_text_view"
@@ -167,7 +168,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:text="مدل 3 بعدی"
-                            android:textColor="#F19195"
+                            android:textColor="#FFFFFF"
                             android:textSize="@dimen/_9ssp"
                             app:layout_constraintBottom_toBottomOf="@id/back_card_view"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -309,7 +310,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/voice_lesson_constraint"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -317,9 +318,20 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ddd_lesson_constraint"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ddd_image_click"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/dddimageclick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
