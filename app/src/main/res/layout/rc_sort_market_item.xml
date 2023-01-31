@@ -6,7 +6,7 @@
     android:layoutDirection="ltr">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/send_code"
+        android:id="@+id/sort_market_card_view"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_33sdp"
         android:clickable="true"

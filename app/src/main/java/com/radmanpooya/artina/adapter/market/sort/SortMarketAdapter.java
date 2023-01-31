@@ -1,7 +1,9 @@
 package com.radmanpooya.artina.adapter.market.sort;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.radmanpooya.artina.R;
@@ -21,11 +24,15 @@ public class SortMarketAdapter extends RecyclerView.Adapter<SortMarketAdapter.So
     Activity activity;
     Context context;
     List<SortMarketModel> sortMarketModelList;
+    IOnClickSort iOnClickSort;
+    int selectedId;
 
-    public SortMarketAdapter(Activity activity, Context context, List<SortMarketModel> sortMarketModelList) {
+    public SortMarketAdapter(Activity activity, Context context, List<SortMarketModel> sortMarketModelList, IOnClickSort iOnClickSort, int selectedId) {
         this.activity = activity;
         this.context = context;
         this.sortMarketModelList = sortMarketModelList;
+        this.iOnClickSort = iOnClickSort;
+        this.selectedId = selectedId;
     }
 
     @NonNull
@@ -35,9 +42,20 @@ public class SortMarketAdapter extends RecyclerView.Adapter<SortMarketAdapter.So
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SortMarketViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SortMarketViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.iconResource.setImageResource(sortMarketModelList.get(position).getIconResource());
         holder.title.setText(sortMarketModelList.get(position).getTitle());
+
+        holder.sortMarketCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                holder.sortMarketCardView.setCardBackgroundColor(Color.parseColor("#FFF3F3"));
+                holder.title.setTextColor(Color.parseColor("#F46953"));
+                iOnClickSort.onClickSort(sortMarketModelList.get(position).getId());
+            }
+        });
+
     }
 
     @Override
@@ -49,13 +67,20 @@ public class SortMarketAdapter extends RecyclerView.Adapter<SortMarketAdapter.So
 
         ImageView iconResource;
         TextView title;
+        CardView sortMarketCardView;
+
         public SortMarketViewHolder(@NonNull View itemView) {
             super(itemView);
             iconResource = itemView.findViewById(R.id.icon_resource);
             title = itemView.findViewById(R.id.title);
+            sortMarketCardView = itemView.findViewById(R.id.sort_market_card_view);
 
 
         }
+    }
+
+    public interface IOnClickSort {
+        void onClickSort(int id);
     }
 
 }

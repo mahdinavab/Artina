@@ -155,6 +155,19 @@
                     android:layout_height="0dp"
                     android:background="@drawable/fade_to_white_gradient"/>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/product_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clipChildren="true"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sort_market_recycler" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

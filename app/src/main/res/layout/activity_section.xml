@@ -90,7 +90,7 @@
             android:layout_gravity="center_vertical"
             android:text="22"
             android:textColor="#D44416"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/cost_one_text_view"
@@ -101,7 +101,7 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:text="تعداد بخش ها: "
             android:textColor="#303840"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/background_card_view"
@@ -160,7 +160,7 @@
             android:layout_gravity="center_vertical"
             android:text="محمد سعید فداالدینی"
             android:textColor="#D44416"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/professor_one_text_view"
@@ -171,7 +171,7 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:text="استاد: "
             android:textColor="#303840"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/background_two_card_view"
@@ -231,7 +231,7 @@
             android:layout_gravity="center_vertical"
             android:text="2500000 تومان"
             android:textColor="#D44416"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/cost_one_text"
@@ -242,7 +242,7 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:text="قیمت: "
             android:textColor="#303840"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/background_three_card_view"
@@ -279,7 +279,7 @@
         android:text="سرفصل های دوره"
         android:layout_marginTop="@dimen/_17sdp"
         android:textColor="#303840"
-        android:textSize="@dimen/_11ssp"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintTop_toBottomOf="@id/education_image_card_view"
         app:layout_constraintEnd_toEndOf="@id/section_card_recycler"/>
 
