@@ -50,7 +50,7 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.SectionV
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, LessonListActivity.class);
-                intent.putExtra("lesson_id",sectionResponseItems.get(position).getId());
+                intent.putExtra("section_id",sectionResponseItems.get(position).getId());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

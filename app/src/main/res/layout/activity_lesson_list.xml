@@ -43,11 +43,22 @@
 
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/back_image_view"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
+        android:src="@drawable/backicon"
+        app:layout_constraintBottom_toBottomOf="@id/back_card_view"
+        app:layout_constraintEnd_toEndOf="@id/back_card_view"
+        app:layout_constraintStart_toStartOf="@id/back_card_view"
+        app:layout_constraintTop_toTopOf="@id/back_card_view" />
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/lesson_card_recycler"
         android:layout_width="@dimen/_260sdp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_35sdp"
         app:cardBackgroundColor="#FBF9F9"
         app:cardCornerRadius="@dimen/_14sdp"

@@ -39,7 +39,7 @@ public class LessonListActivity extends AppCompatActivity {
 
 
     TextView lessonTitleTextView;
-    int lessonId;
+    int sectionId;
     RecyclerView sectionRecycler;
     LessonAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -62,12 +62,14 @@ public class LessonListActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        lessonId = getIntent().getIntExtra("lesson_id", 1);
+        sectionId = getIntent().getIntExtra("section_id", 1);
+
+        getLessonData(sectionId+"");
     }
 
-    public void getSectionData(String lessonId){
+    public void getLessonData(String sectionId){
 
-        final StringRequest sectionReq = new StringRequest(Request.Method.GET, Link.GET_LESSONS+lessonId, new Response.Listener<String>() {
+        final StringRequest sectionReq = new StringRequest(Request.Method.GET, Link.GET_LESSONS+sectionId, new Response.Listener<String>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(String response) {
