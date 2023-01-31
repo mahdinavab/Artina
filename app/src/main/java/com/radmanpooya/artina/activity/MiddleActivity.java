@@ -42,7 +42,7 @@ public class MiddleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_middle);
 
-        String file = "https://fast-programmer.ir/models/F.obj";
+        String file = "https://fast-programmer.ir/models/engine.obj";
         Log.i("DDDIIIGGG","file : "+file);
         if (file != null) {
             if (file.endsWith(".index")) {

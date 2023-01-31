@@ -46,7 +46,7 @@ public class SortMarketAdapter extends RecyclerView.Adapter<SortMarketAdapter.So
         holder.iconResource.setImageResource(sortMarketModelList.get(position).getIconResource());
         holder.title.setText(sortMarketModelList.get(position).getTitle());
 
-        holder.sortMarketCardView.setOnClickListener(new View.OnClickListener() {
+        /*holder.sortMarketCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -54,7 +54,7 @@ public class SortMarketAdapter extends RecyclerView.Adapter<SortMarketAdapter.So
                 holder.title.setTextColor(Color.parseColor("#F46953"));
                 iOnClickSort.onClickSort(sortMarketModelList.get(position).getId());
             }
-        });
+        });*/
 
     }
 

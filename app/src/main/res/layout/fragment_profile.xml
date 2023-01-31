@@ -61,7 +61,6 @@
 
 
 
-
     <LinearLayout
         android:id="@+id/edit_info_linear_layout"
         android:layout_width="wrap_content"
@@ -69,6 +68,8 @@
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/edit_info_card_view"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@id/edit_info_card_view">
@@ -140,6 +141,8 @@
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/academy_card_view"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@id/academy_card_view">
@@ -251,6 +254,8 @@
         android:layout_marginEnd="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/business_card_view"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@id/business_card_view">
@@ -387,6 +392,8 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical"
         android:gravity="end"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/wallet_card_view"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@id/wallet_card_view">
@@ -455,6 +462,8 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical"
         android:gravity="end"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/law_card_view"
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@id/law_card_view">

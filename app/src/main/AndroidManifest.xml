@@ -23,6 +23,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/mainStyle"/>
         <activity
+            android:name=".activity.MiddleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity.MyModelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+        <activity
             android:name=".activity.LessonListActivity"
             android:exported="false"
             android:screenOrientation="portrait"
