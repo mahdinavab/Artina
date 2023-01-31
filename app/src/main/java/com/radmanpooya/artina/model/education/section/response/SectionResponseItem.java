@@ -10,6 +10,9 @@ public class SectionResponseItem{
 	@SerializedName("learn")
 	private Learn learn;
 
+	@SerializedName("id")
+	private int id;
+
 	@SerializedName("is_free")
 	private boolean isFree;
 
@@ -19,55 +22,60 @@ public class SectionResponseItem{
 	@SerializedName("title")
 	private String title;
 
-	public void setIsActive(boolean isActive){
+	public SectionResponseItem(boolean isActive, Learn learn, int id, boolean isFree, int numLesson, String title) {
 		this.isActive = isActive;
-	}
-
-	public boolean isIsActive(){
-		return isActive;
-	}
-
-	public void setLearn(Learn learn){
 		this.learn = learn;
-	}
-
-	public Learn getLearn(){
-		return learn;
-	}
-
-	public void setIsFree(boolean isFree){
+		this.id = id;
 		this.isFree = isFree;
-	}
-
-	public boolean isIsFree(){
-		return isFree;
-	}
-
-	public void setNumLesson(int numLesson){
 		this.numLesson = numLesson;
-	}
-
-	public int getNumLesson(){
-		return numLesson;
-	}
-
-	public void setTitle(String title){
 		this.title = title;
 	}
 
-	public String getTitle(){
-		return title;
+	public void setActive(boolean active) {
+		isActive = active;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"SectionResponseItem{" + 
-			"is_active = '" + isActive + '\'' + 
-			",learn = '" + learn + '\'' + 
-			",is_free = '" + isFree + '\'' + 
-			",num_lesson = '" + numLesson + '\'' + 
-			",title = '" + title + '\'' + 
-			"}";
-		}
+	public void setLearn(Learn learn) {
+		this.learn = learn;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setFree(boolean free) {
+		isFree = free;
+	}
+
+	public void setNumLesson(int numLesson) {
+		this.numLesson = numLesson;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public Learn getLearn() {
+		return learn;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public boolean isFree() {
+		return isFree;
+	}
+
+	public int getNumLesson() {
+		return numLesson;
+	}
+
+	public String getTitle() {
+		return title;
+	}
 }

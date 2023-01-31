@@ -28,7 +28,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.SectionVie
     @NonNull
     @Override
     public SectionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new LessonAdapter.SectionViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.rc_section_item, parent, false));
+        return new LessonAdapter.SectionViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.rc_lesson_item, parent, false));
     }
 
     @Override
