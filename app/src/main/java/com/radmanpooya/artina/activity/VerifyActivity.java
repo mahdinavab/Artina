@@ -319,7 +319,7 @@ public class VerifyActivity extends AppCompatActivity {
                     UserInfoManager userInfoManager = new UserInfoManager(VerifyActivity.this);
                     userInfoManager.setRefreshToken(verifyCodeResponse.getRefreshToken());
                     userInfoManager.setAccessToken(verifyCodeResponse.getAccessToken());
-                    Intent intent = new Intent(VerifyActivity.this,MainActivity.class);
+                    Intent intent = new Intent(VerifyActivity.this,IntroAppActivity.class);
                     startActivity(intent);
                     finish();
                 }else {

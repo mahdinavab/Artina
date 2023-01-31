@@ -28,12 +28,22 @@ public class UserInfoManager {
         editor.apply();
     }
 
+    public void setFirstLogin(String firstLogin) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("first_login", firstLogin);
+        editor.apply();
+    }
+
     public String getUserId() {
         return sharedPreferences.getString("user_id", "");
     }
 
     public String getAccessToken() {
         return sharedPreferences.getString("access_token", "");
+    }
+
+    public String getFirstLogin() {
+        return sharedPreferences.getString("first_login", "");
     }
 
     public String getRefreshToken() {

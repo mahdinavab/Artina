@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.IntroAppActivity"
+    android:layoutDirection="ltr">
+
+    <TextView
+        android:id="@+id/artina_text"
+        style="@style/iran_sans_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="@string/artina"
+        android:textColor="#303840"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/next_intro"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginStart="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="@dimen/_9sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/gradient_one">
+            <TextView
+                android:id="@+id/next_text_view"
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="بعدی"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_16ssp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/back_intro"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginStart="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:cardBackgroundColor="#303840"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="@dimen/_9sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                style="@style/iran_sans_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="قبلی"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_16ssp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsColor="#D9D9D9"
+        app:dotsCornerRadius="@dimen/_4sdp"
+        app:dotsSize="@dimen/_7sdp"
+        app:dotsSpacing="@dimen/_2sdp"
+        app:dotsWidthFactor="2.5"
+        app:layout_constraintBottom_toBottomOf="@+id/next_intro"
+        app:layout_constraintEnd_toStartOf="@+id/next_intro"
+        app:layout_constraintStart_toEndOf="@+id/back_intro"
+        app:layout_constraintTop_toTopOf="@+id/next_intro"
+        app:progressMode="true"
+        app:selectedDotColor="@color/orangeRed" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_intro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/next_intro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/artina_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
