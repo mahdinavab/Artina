@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:id="@+id/constraint_learn"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="ltr">
     
@@ -30,7 +31,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
-                    android:id="@+id/education_image_view"
+                    android:id="@+id/learn_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@color/cream"
@@ -40,7 +41,7 @@
 
             <TextView
                 style="@style/iran_sans_bold"
-                android:id="@+id/title_of_period_text_view"
+                android:id="@+id/learn_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -57,8 +58,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="@dimen/_5sdp"
-                app:layout_constraintTop_toBottomOf="@id/title_of_period_text_view"
-                app:layout_constraintEnd_toEndOf="@id/title_of_period_text_view">
+                app:layout_constraintTop_toBottomOf="@id/learn_title"
+                app:layout_constraintEnd_toEndOf="@id/learn_title">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -71,7 +72,7 @@
 
                 <TextView
                     style="@style/iran_sans_bold"
-                    android:id="@+id/cost_two_text_view"
+                    android:id="@+id/learn_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -105,14 +106,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/cost_linear_layout"
-                app:layout_constraintEnd_toEndOf="@id/title_of_period_text_view">
+                app:layout_constraintEnd_toEndOf="@id/learn_title">
 
 
 
 
                 <TextView
                     style="@style/iran_sans_bold"
-                    android:id="@+id/professor_two_text_view"
+                    android:id="@+id/learn_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

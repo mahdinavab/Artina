@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.radmanpooya.artina.R;
+import com.radmanpooya.artina.activity.ProductActivity;
 import com.radmanpooya.artina.activity.SectionActivity;
 import com.radmanpooya.artina.api.Link;
 import com.radmanpooya.artina.model.market.product.response.ProductResponseItem;
@@ -62,7 +63,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productItemMainCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, SectionActivity.class);
+                Intent intent = new Intent(context, ProductActivity.class);
 
                 intent.putExtra("product_id",productResponseItems.get(position).getId());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

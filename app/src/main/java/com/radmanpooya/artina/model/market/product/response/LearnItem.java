@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class LearnItem{
 
+	@SerializedName("id")
+	private int id;
+
 	@SerializedName("image")
 	private String image;
 
@@ -16,46 +19,51 @@ public class LearnItem{
 	@SerializedName("title")
 	private String title;
 
-	public void setImage(String image){
+	public LearnItem(int id, String image, int price, String auther, String title) {
+		this.id = id;
 		this.image = image;
-	}
-
-	public String getImage(){
-		return image;
-	}
-
-	public void setPrice(int price){
 		this.price = price;
-	}
-
-	public int getPrice(){
-		return price;
-	}
-
-	public void setAuther(String auther){
 		this.auther = auther;
-	}
-
-	public String getAuther(){
-		return auther;
-	}
-
-	public void setTitle(String title){
 		this.title = title;
 	}
 
-	public String getTitle(){
-		return title;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"LearnItem{" + 
-			"image = '" + image + '\'' + 
-			",price = '" + price + '\'' + 
-			",auther = '" + auther + '\'' + 
-			",title = '" + title + '\'' + 
-			"}";
-		}
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setAuther(String auther) {
+		this.auther = auther;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public String getAuther() {
+		return auther;
+	}
+
+	public String getTitle() {
+		return title;
+	}
 }

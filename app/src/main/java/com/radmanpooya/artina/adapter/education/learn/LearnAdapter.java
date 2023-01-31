@@ -58,6 +58,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.LearnViewHol
             public void onClick(View view) {
                 Intent intent = new Intent(context, SectionActivity.class);
                 intent.putExtra("learn_id",learnResponseItemList.get(position).getId());
+                intent.putExtra("intent_type","fromLearn");
                 intent.putExtra("category_id",categoryId);
                 intent.putExtra("category_title",categoryTitle);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -79,8 +79,14 @@ public class SectionActivity extends AppCompatActivity {
 
     private void initialize(){
         learnId = getIntent().getIntExtra("learn_id",1);
-        categoryId = getIntent().getIntExtra("category_id",1);
-        categoryTitle = getIntent().getStringExtra("category_title");
+
+        if(getIntent().getStringExtra("intent_type").equals("fromMarket")){
+
+        }else{
+            categoryId = getIntent().getIntExtra("category_id",1);
+            categoryTitle = getIntent().getStringExtra("category_title");
+        }
+
         getSectionData(learnId+"");
     }
 

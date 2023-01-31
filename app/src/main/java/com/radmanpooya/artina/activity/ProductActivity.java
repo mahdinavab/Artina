@@ -24,6 +24,7 @@ import com.google.gson.reflect.TypeToken;
 import com.radmanpooya.artina.R;
 import com.radmanpooya.artina.adapter.market.attributes.AttributeAdapter;
 import com.radmanpooya.artina.adapter.market.product.ProductAdapter;
+import com.radmanpooya.artina.adapter.market.relatedlearn.RelatedLearnAdapter;
 import com.radmanpooya.artina.api.Api;
 import com.radmanpooya.artina.api.Link;
 import com.radmanpooya.artina.model.market.product.response.ProductDetailsResponse;
@@ -54,7 +55,11 @@ public class ProductActivity extends AppCompatActivity {
     RecyclerView attributeRecycler;
     AttributeAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    
+
+    RecyclerView relatedLearnsRecycler;
+    RelatedLearnAdapter relatedLearnsAdapter;
+    RecyclerView.LayoutManager relatedLearnsLayoutManager;
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +80,7 @@ public class ProductActivity extends AppCompatActivity {
         productWeight = findViewById(R.id.product_weight);
         descriptionTextView = findViewById(R.id.description_text_view);
         attributeRecycler = findViewById(R.id.attribute_recycler);
+        relatedLearnsRecycler = findViewById(R.id.related_learns_recycler);
     }
 
     private void initialize(){
@@ -88,7 +94,7 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                try {
+                /*try {*/
                     
                     Gson gson = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
                     ProductDetailsResponse productDetailsResponse = gson.fromJson(response,ProductDetailsResponse.class);
@@ -98,8 +104,9 @@ public class ProductActivity extends AppCompatActivity {
                     daysLeftText.setText((int)(Float.parseFloat(productDetailsResponse.getDaysLeft().toString()))+" روز باقی مانده");
                     productPrice.setText(productDetailsResponse.getPrice()+" تومان");
                     brandName.setText(productDetailsResponse.getBrandName());
-                    productWeight.setText(productDetailsResponse.getWeight());
+                    productWeight.setText(productDetailsResponse.getWeight()+"");
                     descriptionTextView.setText(productDetailsResponse.getDescription());
+                    Log.i("QQWQWQWQW",productDetailsResponse.toString());
 
                     if(productDetailsResponse.getImages().size() == 0){
                         productImageView.setImageResource(R.drawable.noimage);
@@ -113,9 +120,15 @@ public class ProductActivity extends AppCompatActivity {
                     attributeRecycler.setLayoutManager(layoutManager);
                     attributeRecycler.setHasFixedSize(true);
 
-                }catch (Exception e){
+                    relatedLearnsAdapter=new RelatedLearnAdapter(ProductActivity.this,productDetailsResponse.getLearn());
+                    relatedLearnsRecycler.setAdapter(relatedLearnsAdapter);
+                    relatedLearnsLayoutManager=new LinearLayoutManager(ProductActivity.this);
+                    relatedLearnsRecycler.setLayoutManager(relatedLearnsLayoutManager);
+                    relatedLearnsRecycler.setHasFixedSize(true);
+
+                /*}catch (Exception e){
                     Log.i("POIU",e.getMessage()+"  "+ e.getCause());
-                }
+                }*/
 
             }
         }, new Response.ErrorListener() {
