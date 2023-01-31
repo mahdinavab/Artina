@@ -10,9 +10,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.radmanpooya.artina.ModelViewerGUI;
-import com.radmanpooya.artina.MyModelLoaderTask;
 import com.radmanpooya.artina.R;
+import com.radmanpooya.artina.dddmodel.ModelViewerGUI;
+import com.radmanpooya.artina.dddmodel.MyModelLoaderTask;
 
 import org.the3deer.android_3d_model_engine.camera.CameraController;
 import org.the3deer.android_3d_model_engine.collision.CollisionController;
