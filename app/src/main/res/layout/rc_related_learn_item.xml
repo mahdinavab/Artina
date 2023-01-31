@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:id="@+id/constraint_learn"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layoutDirection="ltr">
+    android:layoutDirection="ltr"
+    android:layout_marginStart="@dimen/_5sdp">
     
     
     <androidx.cardview.widget.CardView
@@ -44,12 +45,12 @@
                 android:id="@+id/learn_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="دوره مقدماتی دوره اول"
-                android:textSize="@dimen/_8ssp"
+                android:textSize="@dimen/_9ssp"
                 android:textColor="#303840"
                 app:layout_constraintTop_toBottomOf="@id/learn_card_view"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <LinearLayout
@@ -57,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
                 app:layout_constraintTop_toBottomOf="@id/learn_title"
                 app:layout_constraintEnd_toEndOf="@id/learn_title">
 
@@ -77,19 +78,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="2500000 تومان"
-                    android:textSize="@dimen/_6ssp"
+                    android:textSize="@dimen/_9ssp"
                     android:textColor="#788692"/>
 
-                <TextView
-                    style="@style/iran_sans_bold"
-                    android:id="@+id/cost_one_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_2sdp"
-                    android:layout_gravity="center_vertical"
-                    android:text="قیمت: "
-                    android:textSize="@dimen/_6ssp"
-                    android:textColor="#788692"/>
 
                 <ImageView
                     android:layout_width="@dimen/_11sdp"
@@ -118,19 +109,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="محمد سعید فدالدینی"
-                    android:textSize="@dimen/_6ssp"
+                    android:textSize="@dimen/_8ssp"
                     android:textColor="#788692"/>
 
-                <TextView
-                    style="@style/iran_sans_bold"
-                    android:id="@+id/professor_one_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_2sdp"
-                    android:layout_gravity="center_vertical"
-                    android:text="استاد: "
-                    android:textSize="@dimen/_6ssp"
-                    android:textColor="#788692"/>
 
                 <ImageView
                     android:layout_width="@dimen/_11sdp"

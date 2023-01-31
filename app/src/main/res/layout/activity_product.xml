@@ -100,6 +100,7 @@
                         android:id="@+id/product_image_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/productimage" />
 
 
@@ -383,6 +384,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/related_constarint"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_170sdp"
                     android:orientation="horizontal"
@@ -400,7 +402,7 @@
 
                         <ImageView
                             android:id="@+id/mtn_learn"
-                            android:layout_width="@dimen/_90sdp"
+                            android:layout_width="@dimen/_70sdp"
                             android:layout_height="@dimen/_140sdp"
                             android:src="@drawable/learnsmtn"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -425,6 +427,14 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/related_constarint" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -498,7 +508,6 @@
                     android:textColor="#ffffff"
                     android:textSize="@dimen/_13ssp" />
 
-
             </androidx.cardview.widget.CardView>
 
 
@@ -506,5 +515,10 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

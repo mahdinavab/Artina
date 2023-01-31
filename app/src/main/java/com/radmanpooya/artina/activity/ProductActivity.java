@@ -1,6 +1,7 @@
 package com.radmanpooya.artina.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,7 +45,7 @@ import java.util.Map;
 
 public class ProductActivity extends AppCompatActivity {
 
-    
+    Animation fadeOut;
     TextView titleTextView;
     TextView categoryTitle;
     ImageView productImageView;
@@ -59,6 +63,8 @@ public class ProductActivity extends AppCompatActivity {
     RecyclerView relatedLearnsRecycler;
     RelatedLearnAdapter relatedLearnsAdapter;
     RecyclerView.LayoutManager relatedLearnsLayoutManager;
+
+    ConstraintLayout loading;
 
     
     @Override
@@ -81,11 +87,14 @@ public class ProductActivity extends AppCompatActivity {
         descriptionTextView = findViewById(R.id.description_text_view);
         attributeRecycler = findViewById(R.id.attribute_recycler);
         relatedLearnsRecycler = findViewById(R.id.related_learns_recycler);
+        loading = findViewById(R.id.loading);
     }
 
     private void initialize(){
+        fadeOut = AnimationUtils.loadAnimation(ProductActivity.this, R.anim.fade_out);
         productId = getIntent().getIntExtra("product_id",1);
         getProductDetails(productId);
+
     }
 
     public void getProductDetails(final int productId) {
@@ -94,8 +103,10 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                /*try {*/
-                    
+                try {
+                    loading.setVisibility(View.INVISIBLE);
+                    loading.startAnimation(fadeOut);
+
                     Gson gson = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
                     ProductDetailsResponse productDetailsResponse = gson.fromJson(response,ProductDetailsResponse.class);
 
@@ -122,13 +133,13 @@ public class ProductActivity extends AppCompatActivity {
 
                     relatedLearnsAdapter=new RelatedLearnAdapter(ProductActivity.this,productDetailsResponse.getLearn());
                     relatedLearnsRecycler.setAdapter(relatedLearnsAdapter);
-                    relatedLearnsLayoutManager=new LinearLayoutManager(ProductActivity.this);
+                    relatedLearnsLayoutManager=new LinearLayoutManager(ProductActivity.this,RecyclerView.HORIZONTAL,true);
                     relatedLearnsRecycler.setLayoutManager(relatedLearnsLayoutManager);
                     relatedLearnsRecycler.setHasFixedSize(true);
 
-                /*}catch (Exception e){
+                }catch (Exception e){
                     Log.i("POIU",e.getMessage()+"  "+ e.getCause());
-                }*/
+                }
 
             }
         }, new Response.ErrorListener() {
